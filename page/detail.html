@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="	width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>切好了送菜</title>
+    <link rel="stylesheet" href="http://include.qiehaole.com/css/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div id="itemsdetail-container" class="container">
+            <div class="header" id="detail-header">
+                <span class="single-name"><?=$single_food['foodname']?></span>
+            </div>
+            <div class="detail">
+                <div class="detail-image">
+                    <img src="<?=$single_food['img']?>">
+                </div>
+                <div class="button-group">
+                    <button class="addItem btn btn-success">
+			<a href="<?=$single_food['link']?>" target="_blank" style="color: #fff;">淘宝购买商品</a>
+		    </button>
+                </div>
+                <div class="detail-content">
+                    <ul>
+                        <li>价格： <?=$single_food['price']?>元</li>
+                        <li>分量： <?=$single_food['weight']?>人份</li>
+                        <li>主料： <?=$single_food['main']?></li>
+                        <li>辅料： <?=$single_food['extra']?></li>
+                        <li>做法：<br>
+                            <pre><?=$single_food['todo']?></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="toolbar">
+                <a class="back" href="http://www.qiehaole.com/list/?type=<?=$url_params['type']?>"><img src="http://include.qiehaole.com/img/back.png"></a>
+                <!--<a class="user" href="javascript:void(0)"><img src="img/user.png"></a>-->
+            </div>
+        </div>
+    </div>	
+</body>
+</html>
+
+
+

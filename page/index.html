@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="	width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>切好了送菜</title>
+    <link rel="stylesheet" href="http://include.qiehaole.com/css/style.css">
+    <script type="text/javascript" src="http://include.qiehaole.com/jquery/jquery-2.0.3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://include.qiehaole.com/js/index.js" charset="utf-8"></script>
+</head>
+    <body>
+        <div class="main-container">
+            <div id="menu-container" class="container">
+                <div class="header" id="home-header">
+                    <div class="types">
+                        <ul>
+                            <li <?php if ($type=="vege") {echo 'class="active"';} ?> id="vegetable">素菜</li>
+                            <li <?php if ($type=="meat") {echo 'class="active"';} ?> id="meat">荤菜</li>
+                            <li <?php if ($type=="soap") {echo 'class="active"';} ?> id="soup">汤</li>
+                            <!--<li id="speciality">土特团</li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="marquee">
+                    <marquee class="none" id="marquee-content">8月20日-9月20日期间凡单次消费满30元可获赠体验虫草鸡蛋2个（一人限一次）</marquee>
+                </div>
+                <div id="content-items" class="main">
+                    <div id="items-0" class="items" style="display: block">
+
+			<?php foreach ($curr_food as $val) { ?>
+			<div class="item" id="item-id<?php echo $val['id']; ?>" href="<?php echo $val['link']; ?>">
+                            <div class="item-title">
+				<?=$val['foodname']; ?>
+                            </div>
+                            <div class="item-image"><img src="<?=$val['thumb']; ?>" lazy-src="" alt="item image" style="width:100%;height: 180px;margin-top: 0"></div>
+                            <div class="single-item-info">
+                                <div class="item-price"><span><img src="http://include.qiehaole.com/img/rmb@2x.png" alt="RMB"></span> <span><?=$val['price']; ?></span></div>
+                                <div class="item-amount"><span><img src="http://include.qiehaole.com/img/bow@2x.png" alt="bow1"></span> <span><?=$val['weight']; ?>人份</span></div>
+                                <div class="item-detail"><a href="<?php echo $val['link']; ?>">详情</a> <img src="http://include.qiehaole.com/img/greentri@2x.png" alt="detail"></div>
+                            </div>
+                        </div>
+			<?php } ?>
+                        
+                    </div>
+                    <div id="items-1" class="items" style="display: none">荤菜</div>
+                    <div id="items-2" class="items" style="display: none">汤</div>
+                    <div id="items-3" class="items" style="display: none">土特团</div>
+                </div><!--
+                <div class="toolbar">
+                    <a class="mybtn" id="before-submit" href="javascript:void(0)" hidefocus="true">请先选单</a>
+                    <a class="user" href="javascript:void(0)" hidefocus="true"><img src="img/user.png" alt="user"></a>
+                    <a class="togglePic" href="javascript:void(0)" hidefocus="true"><img src="img/noimg.png" alt="togglePic"></a>
+                </div>-->
+            </div>
+        </div>
+    </body>
+</html>
